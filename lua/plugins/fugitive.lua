@@ -1,3 +1,3 @@
 return {
-  { "tpope/vim-fugitive", { mode = "n", "<leader>gs", "<cmd>Git<cr>" } },
+  { "tpope/vim-fugitive", keys = { { mode = "n", "<leader>gs" }, { mode = "n", "<cmd>Git<cr>}" } } },
 }
