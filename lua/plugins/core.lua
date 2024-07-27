@@ -15,6 +15,7 @@ return {
       colorscheme = "rose-pine",
     },
   },
+
   "ThePrimeagen/vim-be-good",
   "nvim-lua/plenary.nvim",
   -- change trouble config
@@ -39,7 +40,10 @@ return {
       }
     end,
   },
-
+  {
+    "williamboman/mason.nvim",
+    opts = { ensure_installed = { "prettier" } },
+  },
   -- use mini.starter instead of alpha
   { import = "lazyvim.plugins.extras.ui.mini-starter" },
 
