@@ -23,6 +23,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- appends the current line with the line below
 vim.keymap.set("n", "J", "mzJ`z")
+
 --delete the selection and pastes the value of the register
 --does not change the value on the register
 --meaning that you don`t change what is going to be pasted when you press p

@@ -27,12 +27,31 @@ return {
           },
         },
       }, -- Required
-      { "williamboman/mason.nvim" }, -- Optional
+      {
+        "williamboman/mason.nvim",
+        opts = {
+          ensure_installed = {
+            "lua-language-server",
+            "stylua",
+            "html-lsp",
+            "css-lsp",
+            "prettier",
+            "eslint-lsp",
+            "gopls",
+            "js-debug-adapter",
+            "typescript-language-server",
+            "tailwindcss-language-server",
+            "angular-language-server",
+          },
+        },
+      }, -- Optional
       { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
       -- Autocompletion
       { "hrsh7th/nvim-cmp" }, -- Required
-      { "hrsh7th/cmp-nvim-lsp" }, -- Required
+      {
+        "hrsh7th/cmp-nvim-lsp",
+      }, -- Required
       { "hrsh7th/cmp-buffer" }, -- Optional
       { "hrsh7th/cmp-path" }, -- Optional
       { "saadparwaiz1/cmp_luasnip" }, -- Optional
@@ -73,7 +92,7 @@ return {
       })
 
       lsp.on_attach(function(client, bufnr)
-        print("help")
+        print(client.name)
         local opts = { buffer = bufnr, remap = false }
 
         vim.keymap.set("n", "<leader>gd", function()
@@ -110,6 +129,10 @@ return {
       end)
 
       lsp.setup()
+
+      vim.diagnostic.config({
+        virtual_text = true,
+      })
     end,
   },
 }
