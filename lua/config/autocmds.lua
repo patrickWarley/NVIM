@@ -8,6 +8,7 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 --
 --
+
 vim.cmd("set shell=C:/Users/patri/AppData/Local/Microsoft/WindowsApps/Microsoft.PowerShell_8wekyb3d8bbwe/pwsh.exe")
 vim.cmd("set shellcmdflag=-command")
 vim.cmd('set shellquote="')
@@ -21,9 +22,10 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
 
-vim.opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = false
 
 vim.opt.wrap = false
 

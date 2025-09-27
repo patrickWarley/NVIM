@@ -14,14 +14,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.diagnostic.config({
-  virtual_text = true, -- Show inline error/warning text
-  signs = true, -- Show diagnostic signs (e.g., icons) in the gutter
-  underline = true, -- Underline errors in the text
-  update_in_insert = false, -- Disable updating diagnostics in insert mode
-  severity_sort = true, -- Sort diagnostics by severity (error -> warning -> info)
-})
-
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins

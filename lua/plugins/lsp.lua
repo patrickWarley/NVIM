@@ -92,8 +92,14 @@ return {
       })
 
       lsp.on_attach(function(client, bufnr)
-        print(client.name)
         local opts = { buffer = bufnr, remap = false }
+        vim.diagnostic.config({
+          virtual_text = true, -- Show inline error/warning text
+          signs = true, -- Show diagnostic signs (e.g., icons) in the gutter
+          underline = true, -- Underline errors in the text
+          update_in_insert = false, -- Disable updating diagnostics in insert mode
+          severity_sort = true, -- Sort diagnostics by severity (error -> warning -> info)
+        })
 
         vim.keymap.set("n", "<leader>gd", function()
           vim.lsp.buf.definition()
@@ -129,10 +135,6 @@ return {
       end)
 
       lsp.setup()
-
-      vim.diagnostic.config({
-        virtual_text = true,
-      })
     end,
   },
 }

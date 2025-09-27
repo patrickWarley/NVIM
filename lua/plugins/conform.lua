@@ -15,7 +15,7 @@ return {
         html = { "prettier" },
         json = { "prettier" },
         yaml = { "prettier" },
-        markdown = { "prettier" },
+        markdown = { "markdows-oxide" },
         graphql = { "prettier" },
       },
       formatters = {
